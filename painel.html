@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle | AS SOUND</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="admin-wrapper">
+        <main class="admin-main">
+            <header class="admin-header">
+                <div class="header-title-box">
+                    <h1>AS SOUND | Gestão do Catálogo</h1>
+                    <p>Cadastre categorias, produtos e banners em tempo real na sua vitrine.</p>
+                </div>
+                <a href="index.html" class="btn-back-vitrine"><i class="fas fa-arrow-left"></i> Voltar para a Vitrine</a>
+            </header>
+
+            <div class="admin-grid">
+                <section class="admin-forms-column">
+                    
+                    <div class="admin-card" style="border-left: 4px solid var(--brand-blue);">
+                        <div class="card-header">
+                            <h3><i class="fas fa-images"></i> Links dos Banners do Carrossel</h3>
+                        </div>
+                        <form id="form-cadastro-banners" class="admin-form">
+                            <div class="form-group">
+                                <label for="adm-banner1">Link do Banner 1 (Internet URL)</label>
+                                <input type="url" id="adm-banner1" placeholder="https://site.com/banner1.jpg" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adm-banner2">Link do Banner 2 (Internet URL)</label>
+                                <input type="url" id="adm-banner2" placeholder="https://site.com/banner2.jpg" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adm-banner3">Link do Banner 3 (Internet URL)</label>
+                                <input type="url" id="adm-banner3" placeholder="https://site.com/banner3.jpg" required>
+                            </div>
+                            <button type="submit" class="btn-submit" style="background-color: var(--brand-blue);"><i class="fas fa-sync-alt"></i> Atualizar Banners</button>
+                        </form>
+                    </div>
+                    
+                    <div class="admin-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-folder-plus"></i> Nova Categoria</h3>
+                        </div>
+                        <form id="form-cadastro-categoria" class="admin-form">
+                            <div class="form-group">
+                                <label for="adm-nova-categoria-nome">Nome da Categoria</label>
+                                <input type="text" id="adm-nova-categoria-nome" placeholder="Ex: Subwoofers, Amplificadores" required>
+                            </div>
+                            <button type="submit" class="btn-submit"><i class="fas fa-plus"></i> Criar Categoria</button>
+                        </form>
+                    </div>
+
+                    <div class="admin-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-plus-circle"></i> Novo Componente / Produto</h3>
+                        </div>
+                        <form id="form-cadastro-produto" class="admin-form">
+                            <div class="form-group">
+                                <label for="adm-nome">Nome do Produto</label>
+                                <input type="text" id="adm-nome" placeholder="Ex: Subwoofer Pioneer 12 400w RMS" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adm-preco">Preço (R$)</label>
+                                    <input type="number" id="adm-preco" step="0.01" placeholder="0.00" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="adm-categoria">Categoria Vínculo</label>
+                                    <select id="adm-categoria" required>
+                                        </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="adm-descricao">Especificações Técnicas / Descrição</label>
+                                <textarea id="adm-descricao" rows="4" placeholder="Detalhes do produto, potência, dimensões..." required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fas fa-images"></i> Links das Imagens do Produto (Até 3)</label>
+                                <input type="url" id="adm-img1" placeholder="URL da Imagem Principal (Obrigatória)" style="margin-bottom: 8px;" required>
+                                <input type="url" id="adm-img2" placeholder="URL da Imagem 2 (Opcional)" style="margin-bottom: 8px;">
+                                <input type="url" id="adm-img3" placeholder="URL da Imagem 3 (Opcional)">
+                            </div>
+
+                            <button type="submit" class="btn-submit btn-product"><i class="fas fa-save"></i> Publicar na Vitrine</button>
+                        </form>
+                    </div>
+
+                </section>
+
+                <section class="admin-tables-column">
+                    
+                    <div class="admin-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-list"></i> Produtos Cadastrados</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                               <thead>
+                                   <tr>
+                                       <th>Produto</th>
+                                       <th>Categoria</th>
+                                       <th>Preço</th>
+                                       <th style="text-align: center;">Ações</th>
+                                   </tr>
+                               </thead>
+                               <tbody id="adm-lista-produtos">
+                                   </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

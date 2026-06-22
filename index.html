@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AS SOUND | Vitrine Digital Automotiva</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-top">
+            <div class="logo">
+                <h1 id="logo-site">AS SOUND</h1>
+                <p class="logo-sub">Premium Audio Hub</p>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Buscar componente (subwoofer, amplificador...)...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="header-support">
+                <span class="support-badge" id="btn-compra-segura"><i class="fas fa-shield-halved"></i> Catálogo Verificado</span>
+            </div>
+        </div>
+
+        <div class="container header-bottom">
+            <nav class="nav-menu" id="nav-categorias-dinamicas">
+                <a href="#" class="category-btn" id="btn-todas"><i class="fas fa-layer-group"></i> Todo o Estoque</a>
+            </nav>
+            <div class="user-menu">
+                <a href="#" id="btn-minha-conta"><i class="fa-regular fa-comment-dots"></i> Suporte Direto</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="vitrine-principal" class="container">
+        
+        <section class="carousel-container">
+            <div class="carousel-wrapper" id="carousel-slider">
+                <div class="carousel-slide"><img src="https://via.placeholder.com/1200x400/1a1a1a/ffffff?text=Link+Banner+1" alt="Banner 1"></div>
+                <div class="carousel-slide"><img src="https://via.placeholder.com/1200x400/2a6fdb/ffffff?text=Link+Banner+2" alt="Banner 2"></div>
+                <div class="carousel-slide"><img src="https://via.placeholder.com/1200x400/121214/ffffff?text=Link+Banner+3" alt="Banner 3"></div>
+            </div>
+            
+            <button class="carousel-control prev" id="carousel-prev-btn">&#10094;</button>
+            <button class="carousel-control next" id="carousel-next-btn">&#10095;</button>
+            
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+        </section>
+
+        <h2 class="section-title">Produtos Disponíveis</h2>
+        
+        <div class="product-grid" id="product-grid">
+            </div>
+    </main>
+
+    <div id="product-modal" class="modal-overlay hidden" onclick="if(event.target === this) fecharModalProduto()">
+        <div class="modal-container">
+            
+            <div class="modal-close" id="btn-fechar-modal-x" role="button" aria-label="Fechar modal" onclick="fecharModalProduto(); event.stopPropagation();">
+                <i class="fas fa-times"></i>
+            </div>
+            
+            <div class="modal-content">
+                <div class="modal-gallery">
+                    <div class="main-image-box">
+                        <img id="modal-main-img" src="" alt="Produto">
+                    </div>
+                    <div class="thumbnail-list" id="modal-thumbnails"></div>
+                </div>
+
+                <div class="modal-details-info">
+                    <div class="credibility-tags">
+                        <span class="tag-status"><i class="fa-solid fa-check"></i> Original</span>
+                        <span class="tag-status"><i class="fa-solid fa-box"></i> Pronta Entrega</span>
+                    </div>
+
+                    <h2 id="modal-title" class="product-title-evolution">Nome do Produto</h2>
+                    
+                    <div class="pricing-qty-row">
+                        <div class="price-block">
+                            <span id="modal-price" class="price-number">R$ 0</span>
+                        </div>
+                        
+                        <div class="qty-pill">
+                            <button id="btn-qty-minus" class="qty-btn-action">-</button>
+                            <span id="modal-qty-value" class="qty-counter-number">1</span>
+                            <button id="btn-qty-plus" class="qty-btn-action">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="clean-divider"></div>
+
+                    <div class="description-section">
+                        <h5>Visão Geral do Componente</h5>
+                        <p id="modal-description" class="product-description-evolution">Descrição técnica apurada...</p>
+                    </div>
+
+                    <button id="modal-whatsapp-btn" class="btn-whatsapp-evolution">
+                        <i class="fa-brands fa-whatsapp"></i> Iniciar Pedido via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#" id="link-privacidade">Diretrizes</a>
+                <a href="#" id="link-contato">Contato Direto</a>
+                <a href="#" id="link-termos">Garantia</a>
+            </div>
+            <p>&copy; 2026 AS SOUND. Todos os direitos reservados. Experiência de Áudio Digital.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
